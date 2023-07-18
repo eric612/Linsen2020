@@ -50,7 +50,7 @@ let t_holder = null;
 function last_counter() {
   dtime = new Date(time_input.value);
   dtime.setMinutes(dtime.getMinutes()-parseInt(path_time_input.value));
-  dtime.setSeconds(dtime.getMinutes()-parseInt(path_time_input2.value));  
+  dtime.setSeconds(dtime.getSeconds()-parseInt(path_time_input2.value));  
   setTimeout(() => {
     $('.rallyPointConfirm')[0].click()
   }, dtime - new Date());
@@ -59,7 +59,7 @@ function last_counter() {
 // 3. Add event handler
 button.addEventListener ("click", function() {
   dtime = new Date(time_input.value);
-  dtime.setMinutes(dtime.getSeconds()-parseInt(path_time_input.value));
+  dtime.setMinutes(dtime.getMinutes()-parseInt(path_time_input.value));
   dtime.setSeconds(dtime.getSeconds()-parseInt(path_time_input2.value));
   if (dtime  - new Date() > 1500) {
     setTimeout(last_counter, dtime - new Date() - 1000);
