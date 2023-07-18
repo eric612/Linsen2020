@@ -49,14 +49,7 @@ let t_holder = null;
 
 function last_counter() {
   dtime = new Date(time_input.value);
-  if (dtime.getSeconds()-parseInt(path_time_input2.value)>0) {
-    dtime.setMinutes(dtime.getMinutes()-parseInt(path_time_input.value));
-    dtime.setSeconds(dtime.getSeconds()-parseInt(path_time_input2.value));
-  }
-  else {
-    dtime.setMinutes(dtime.getMinutes()-parseInt(path_time_input.value)-1);
-    dtime.setSeconds(dtime.getSeconds()-parseInt(path_time_input2.value)+60);    
-  }
+  dtime.setTime(dtime.getTime() - (parseInt(path_time_input.value) * 60 * 1000) - parseInt(path_time_input2.value)*1000);
   setTimeout(() => {
     $('.rallyPointConfirm')[0].click()
   }, dtime - new Date());
@@ -65,15 +58,7 @@ function last_counter() {
 // 3. Add event handler
 button.addEventListener ("click", function() {
   dtime = new Date(time_input.value);
-  if (dtime.getSeconds()-parseInt(path_time_input2.value)>0) {
-    dtime.setMinutes(dtime.getMinutes()-parseInt(path_time_input.value));
-    dtime.setSeconds(dtime.getSeconds()-parseInt(path_time_input2.value));
-  }
-  else {
-    dtime.setMinutes(dtime.getMinutes()-parseInt(path_time_input.value)-1);
-    dtime.setSeconds(dtime.getSeconds()-parseInt(path_time_input2.value)+60);    
-  }
-
+  dtime.setTime(dtime.getTime() - (parseInt(path_time_input.value) * 60 * 1000) - parseInt(path_time_input2.value)*1000);
   if (dtime  - new Date() > 1500) {
     setTimeout(last_counter, dtime - new Date() - 1000);
   } else {
