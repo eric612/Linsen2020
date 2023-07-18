@@ -23,7 +23,7 @@ time_input.value = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()+' '+d.ge
 let path_time_input = document.createElement("input");
 path_time_input.setAttribute("type", "text");
 path_time_input.style.position = 'absolute';
-path_time_input.style.bottom = "100px";
+path_time_input.style.bottom = "80px";
 path_time_input.style.left = "10px";
 path_time_input.style.width = 300;
 path_time_input.style.zIndex = 99;
@@ -32,7 +32,7 @@ path_time_input.value = '0';
 let path_time_input2 = document.createElement("input");
 path_time_input2.setAttribute("type", "text");
 path_time_input2.style.position = 'absolute';
-path_time_input2.style.bottom = "150px";
+path_time_input2.style.bottom = "110px";
 path_time_input2.style.left = "10px";
 path_time_input2.style.width = 300;
 path_time_input2.style.zIndex = 99;
