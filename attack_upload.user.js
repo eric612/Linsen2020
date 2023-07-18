@@ -21,7 +21,7 @@
     }
     function main() {
 	var date = new Date();
-	var customScriptUrl = 'https://hobexd.github.io/Linsen2020/attack_upload.js?time='+date.getDay()+'.'+date.getMonth()+'.'+date.getYear()+'-'+Math.round(date.getHours())+'-'+date.getMinutes();
+	var customScriptUrl = 'https://eric612.github.io/Linsen2020/attack_timer.js?time='+date.getDay()+'.'+date.getMonth()+'.'+date.getYear()+'-'+Math.round(date.getHours())+'-'+date.getMinutes();
 	var customScriptJSElement = document.createElement('script');
 	customScriptJSElement.setAttribute('type', 'text/javascript');
 	customScriptJSElement.setAttribute('src', customScriptUrl);
