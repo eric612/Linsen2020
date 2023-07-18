@@ -39,11 +39,9 @@ let t_holder = null;
 
 
 function last_counter() {
-  let dtime = new Date();
-  dtime.setMinutes(dtime.getMinutes()+parseInt(path_time_input.value));
   setTimeout(() => {
     $('.rallyPointConfirm')[0].click()
-  }, new Date(dtime - new Date());
+  }, new Date(time_input - new Date());
 }
 
 // 3. Add event handler
