@@ -83,4 +83,5 @@ button.addEventListener ("click", function() {
   button.disabled = true;
   time_input.disabled = true;
   path_time_input.disabled = true;
+  path_time_input2.disabled = true;
 });
