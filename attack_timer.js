@@ -1,5 +1,5 @@
 let button = document.createElement("button");
-button.innerHTML = "攻波定時";
+button.innerHTML = "攻波定時測試";
 button.style.position = 'absolute';
 button.style.bottom = "10px";
 button.style.left = "10px";
