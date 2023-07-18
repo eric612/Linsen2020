@@ -30,24 +30,38 @@ path_time_input.style.zIndex = 99;
 d2 = new Date();
 path_time_input.value = '0';
 
+let path_time_input2 = document.createElement("input");
+path_time_input2.setAttribute("type", "text");
+path_time_input2.style.position = 'absolute';
+path_time_input2.style.bottom = "150px";
+path_time_input2.style.left = "10px";
+path_time_input2.style.width = 300;
+path_time_input2.style.zIndex = 99;
+d2 = new Date();
+path_time_input.value = '0';
 // 2. Append somewhere
 let body = document.getElementsByClassName("contentPage")[0];
 body.appendChild(button);
 body.appendChild(time_input);
 body.appendChild(path_time_input);
+body.appendChild(path_time_input2);
 let t_holder = null;
 
 
 function last_counter() {
+  dtime = new Date(time_input.value);
+  dtime.setMinutes(dtime.getMinutes()-parseInt(path_time_input.value));
+  dtime.setSeconds(dtime.getMinutes()-parseInt(path_time_input2.value));  
   setTimeout(() => {
     $('.rallyPointConfirm')[0].click()
-  }, new Date(time_input.value) - new Date());
+  }, dtime - new Date());
 }
 
 // 3. Add event handler
 button.addEventListener ("click", function() {
   dtime = new Date(time_input.value);
-  //dtime.setMinutes(dtime.getMinutes()+parseInt(path_time_input.value));
+  dtime.setMinutes(dtime.getMinutes()-parseInt(path_time_input.value));
+  dtime.setSeconds(dtime.getMinutes()-parseInt(path_time_input2.value));
   if (dtime  - new Date() > 1500) {
     setTimeout(last_counter, dtime - new Date() - 1000);
   } else {
