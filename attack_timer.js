@@ -24,7 +24,7 @@ let path_time_input = document.createElement("input");
 path_time_input.setAttribute("type", "text");
 path_time_input.style.position = 'absolute';
 path_time_input.style.bottom = "50px";
-path_time_input.style.left = "10px";
+path_time_input.style.left = "100px";
 path_time_input.style.width = 300;
 path_time_input.style.zIndex = 99;
 d2 = new Date();
