@@ -28,7 +28,7 @@ path_time_input.style.left = "10px";
 path_time_input.style.width = 300;
 path_time_input.style.zIndex = 99;
 d2 = new Date();
-path_time_input.value = d2.getFullYear()+'-'+(d2.getMonth()+1)+'-'+d2.getDate()+' '+d2.getHours()+':'+(d2.getMinutes()<10?'0':'') + d2.getMinutes()+':'+d2.getSeconds();
+path_time_input.value = 0;
 
 // 2. Append somewhere
 let body = document.getElementsByClassName("contentPage")[0];
@@ -39,15 +39,19 @@ let t_holder = null;
 
 
 function last_counter() {
+  dtime = new Date(time_input.value);
+  dtime.setMinutes(dtime.getMinutes+path_time_input.value)
   setTimeout(() => {
     $('.rallyPointConfirm')[0].click()
-  }, new Date(time_input.value) - new Date(path_time_input.value) - new Date());
+  }, new Date(dtime - new Date());
 }
 
 // 3. Add event handler
 button.addEventListener ("click", function() {
-  if (new Date(time_input.value) - new Date(path_time_input.value) - new Date() > 1500) {
-    setTimeout(last_counter, new Date(time_input.value) - new Date(path_time_input.value) - new Date() - 1000);
+  dtime = new Date(time_input.value);
+  dtime.setMinutes(dtime.getMinutes+path_time_input.value)
+  if (dtime  - new Date() > 1500) {
+    setTimeout(last_counter, dtime - new Date() - 1000);
   } else {
     last_counter();
   }
