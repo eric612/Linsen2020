@@ -41,7 +41,7 @@ let t_holder = null;
 function last_counter() {
   setTimeout(() => {
     $('.rallyPointConfirm')[0].click()
-  }, new Date(time_input - new Date());
+  }, new Date(time_input.value) - new Date());
 }
 
 // 3. Add event handler
