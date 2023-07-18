@@ -54,4 +54,5 @@ button.addEventListener ("click", function() {
   button.innerHTML = '已設定完成';
   button.disabled = true;
   time_input.disabled = true;
+  path_time_input.disabled = true;
 });
