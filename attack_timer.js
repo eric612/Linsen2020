@@ -28,7 +28,7 @@ path_time_input.style.left = "10px";
 path_time_input.style.width = 300;
 path_time_input.style.zIndex = 99;
 d2 = new Date();
-path_time_input.value = 0;
+path_time_input.value = '0';
 
 // 2. Append somewhere
 let body = document.getElementsByClassName("contentPage")[0];
